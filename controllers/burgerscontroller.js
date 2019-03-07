@@ -2,16 +2,18 @@ var express = require("express");
 
 var router = express.Router();
 
-var cat  = require ("../modales/cats.js");
+var orm = require('../config/orm');
 
-
-router.get("/", function(req,res){
-
-res.render("");
+router.get("/", function (req, res) {
+    orm.selectALL(function (error, burgers) {
+        if (error) {
+            return res.status(501).json({
+                message: "not able to query"
+            });
+        }
+        res.render("index")
+    });
 
 });
 
-router.post("/api/", function(req,res){
-
-});
-
+module.exports = router;
