@@ -1,0 +1,26 @@
+body {
+  background-image: url("/assets/img/91ijC74A5ML.jpg"); 
+  background-size: cover;
+}
+
+.text-center {
+  height: 250px;
+  text-align: center;
+}
+
+h3,h5 {
+  color: aliceblue;
+  font-family: 'Indie Flower', cursive;
+
+}
+p {
+  color: aliceblue;
+  font-family: 'Indie Flower', cursive;
+
+}
+
+footer{
+  color: aliceblue;
+  font-family: 'Indie Flower', cursive;
+
+}

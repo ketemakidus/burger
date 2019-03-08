@@ -1,5 +1,3 @@
-
-  
 $(function () {
   $("#new-burger").on("submit", function (event) {
 
@@ -9,10 +7,10 @@ $(function () {
       burger_name: $("#burger-name").val().trim()
     };
 
-   console.log(newburger);
+    console.log(newburger);
 
     $.ajax("/api/burgers", {
-      type: "POST",
+      type: "PUT",
       data: newburger
     }).then(
       function () {
@@ -22,14 +20,15 @@ $(function () {
     )
   });
 
-  $(".eat-burger").on("submit", function (event) {
+  $("#new-burger").on("submit", function (event) {
     event.preventDefault();
     var Newburgers = {
-      devourd: 1
+      burger_name:$("#burger-name").val().trim(),
+      devourd:1
     };
 
     $.ajax("/api/burgers" + this.id, {
-      type: "PUT",
+      type: "POST",
       data: Newburgers
     }).then(
       function () {
