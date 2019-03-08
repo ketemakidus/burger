@@ -1,14 +1,12 @@
 
-
+  
 $(function () {
-
-
-  $("#submit-burger").on("click", function (event) {
+  $("#new-burger").on("submit", function (event) {
 
     event.preventDefault();
 
     var newburger = {
-      burger_name: $("#burger_name").val().trim()
+      burger_name: $("#burger-name").val().trim()
     };
 
    console.log(newburger);
@@ -24,23 +22,21 @@ $(function () {
     )
   });
 
-  $("eat-burger").on("click", function (event) {
+  $(".eat-burger").on("submit", function (event) {
     event.preventDefault();
-    var newburgers = {
+    var Newburgers = {
       devourd: 1
     };
 
     $.ajax("/api/burgers" + this.id, {
       type: "PUT",
-      data: newburgers
+      data: Newburgers
     }).then(
       function () {
-        console.log("created new burgers");
+        console.log("created New burgers");
         location.reload();
       }
     );
   });
-
-
 }
 );

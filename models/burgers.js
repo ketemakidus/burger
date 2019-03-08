@@ -1,4 +1,3 @@
-// Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm");
 
 var burger = {
@@ -12,18 +11,12 @@ var burger = {
       cb(res);
     });
   },
-  updateOne: function(obj,id, cb) {
-    orm.updateOne(obj,id, function(res) {
+  updateOne: function(eat,id, cb) {
+    orm.updateOne(eat,id, function(res) {
       cb(res);
     });
   }
 };
-// console.log(burger);
-//   delete: function(condition, cb) {
-//     orm.delete("burgers", condition, function(res) {
-//       cb(res);
-//     });
-//   }
-// };
+console.log(burger);
 
 module.exports = burger;
