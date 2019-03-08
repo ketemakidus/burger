@@ -29,5 +29,6 @@ var orm = {
         });
     }
 }
+// console.log(orm);
 
 module.exports = orm;

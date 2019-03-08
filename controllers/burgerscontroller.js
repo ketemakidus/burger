@@ -22,4 +22,6 @@ res.json({ id:result });
   });
 });
 
+// console.log(router);
+
 module.exports = router;

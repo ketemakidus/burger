@@ -1,1 +1,1 @@
-INSERT INTO burgers (burger_name) VALUES ("PISSA BGU", "eat");
+INSERT INTO burgers (burger_name) VALUES ("PISSA BGU");
