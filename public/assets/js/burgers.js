@@ -1,4 +1,5 @@
 $(function () {
+
   $("#new-burger").on("submit", function (event) {
 
     event.preventDefault();
@@ -9,7 +10,7 @@ $(function () {
 
     console.log(newburger);
 
-    $.ajax("/api/burgers", {
+    $.ajax("/api/burger", {
       type: "PUT",
       data: newburger
     }).then(
@@ -27,7 +28,7 @@ $(function () {
       devourd:1
     };
 
-    $.ajax("/api/burgers" + this.id, {
+    $.ajax("/api/burger" + this.id, {
       type: "POST",
       data: Newburgers
     }).then(
