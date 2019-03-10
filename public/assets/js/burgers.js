@@ -1,42 +1,59 @@
-$(function () {
+$(function() {
+  $(".change-sleep").on("click", function(event) {
+    var id = $(this).data("id");
+    var newSleep = $(this).data("newsleep");
 
-  $("#new-burger").on("submit", function (event) {
-
-    event.preventDefault();
-
-    var newburger = {
-      burger_name: $("#burger-name").val().trim()
+    var newSleepState = {
+      sleepy: newSleep
     };
 
-    console.log(newburger);
-
-    $.ajax("/api/burger", {
+    // Send the PUT request.
+    $.ajax("/api/cats/" + id, {
       type: "PUT",
-      data: newburger
+      data: newSleepState
     }).then(
-      function () {
-        console.log(newburger);
-        location.reload();
-      }
-    )
-  });
-
-  $("#new-burger").on("submit", function (event) {
-    event.preventDefault();
-    var Newburgers = {
-      burger_name:$("#burger-name").val().trim(),
-      devourd:1
-    };
-
-    $.ajax("/api/burger" + this.id, {
-      type: "POST",
-      data: Newburgers
-    }).then(
-      function () {
-        console.log("created New burgers");
+      function() {
+        console.log("changed sleep to", newSleep);
+        // Reload the page to get the updated list
         location.reload();
       }
     );
   });
-}
-);
+
+  $(".create-form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var newCat = {
+      name: $("#ca").val().trim(),
+      sleepy: $("[name=sleepy]:checked").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/cats", {
+      type: "POST",
+      data: newCat
+    }).then(
+      function() {
+        console.log("created new cat");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $(".delete-cat").on("click", function(event) {
+    var id = $(this).data("id");
+
+    // Send the DELETE request.
+    $.ajax("/api/cats/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted cat", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+});
