@@ -16,25 +16,18 @@ $(function () {
         location.reload();
     });
 
-    $(".burger-name").on("click", function (event) {
-
-        // $("#panel").hide();
-
-        // var newBurger = $(this).data("newBurger");
-
-        // var newBurger = {
-        //     devourd: newBurger
-        // };
-
-        // // Send the PUT request.
-        // $.ajax("/api/burgers/", {
-        //     type: "PUT",
-        //     data: newBurger
-        // }).then(
-        //     function () {
-        //         console.log(newBurger);
-        //         location.reload();
-        //     }
-        // );
+        $('.burger-id').on('click', function(event) {
+            event.preventDefault();
+    
+            var devoured = {
+                  data: devoured
+            }
+            $.ajax('/api/burgers/', {
+                type: 'PUT',
+                data: devoured
+            }).then(function(){
+                location.reload();
+            })
+        });
     });
-});
+
