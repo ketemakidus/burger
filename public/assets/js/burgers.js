@@ -16,6 +16,25 @@ $(function () {
         location.reload();
     });
 
-    $
+    $(".burger-name").on("click", function (event) {
 
+        // $("#panel").hide();
+
+        // var newBurger = $(this).data("newBurger");
+
+        // var newBurger = {
+        //     devourd: newBurger
+        // };
+
+        // // Send the PUT request.
+        // $.ajax("/api/burgers/", {
+        //     type: "PUT",
+        //     data: newBurger
+        // }).then(
+        //     function () {
+        //         console.log(newBurger);
+        //         location.reload();
+        //     }
+        // );
+    });
 });
