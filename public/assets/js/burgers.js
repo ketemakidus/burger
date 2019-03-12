@@ -19,12 +19,12 @@ $(function () {
         $('.burger-id').on('click', function(event) {
             event.preventDefault();
     
-            var devoured = {
-                  data: devoured
+            var newBurger = {
+                  data: newBurger
             }
-            $.ajax('/api/burgers/', {
+            $.ajax('/api/burgers', {
                 type: 'PUT',
-                data: devoured
+                data: newBurger
             }).then(function(){
                 location.reload();
             })
