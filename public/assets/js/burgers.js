@@ -22,10 +22,11 @@ $(function () {
             var newBurger = {
                   data: newBurger
             }
-            $.ajax('/api/burgers', {
+            $.ajax('/api/burgers/', {
                 type: 'PUT',
                 data: newBurger
-            }).then(function(){
+            }).then(function(data){
+                console.log(newBurger);
                 location.reload();
             })
         });
